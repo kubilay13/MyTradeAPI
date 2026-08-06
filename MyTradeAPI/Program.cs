@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using MyTradeAPI.Data;
+using MyTradeAPI.Services.UserService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +15,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+
+builder.Services.AddScoped<UserService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
