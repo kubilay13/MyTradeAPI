@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http.HttpResults;
-using MyTradeAPI.Data;
+﻿using MyTradeAPI.Data;
 using MyTradeAPI.DTOs.UserDTOs;
 using MyTradeAPI.Models.UserModel;
 
@@ -30,8 +29,7 @@ namespace MyTradeAPI.Services.UserService
                 Age = createUserDto.age,
                 Password = createUserDto.Password,
                 UserCreateTime = DateTime.UtcNow,
-                TheProductsItSells = 0,
-                PurchasedProducts = 0,
+
             };
             _appDbContext.Users.Add(user);
             _appDbContext.SaveChanges();

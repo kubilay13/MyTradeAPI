@@ -1,4 +1,6 @@
-﻿namespace MyTradeAPI.Models.UserModel
+﻿using MyTradeAPI.Models.ProductModel;
+
+namespace MyTradeAPI.Models.UserModel
 {
     public class User
     {
@@ -8,7 +10,7 @@
         public int Age { get; set; }
         public DateTime UserCreateTime { get; set; }
         public string Password { get; set; }
-        public int TheProductsItSells { get; set; }
-        public int PurchasedProducts { get; set; }
+        public ICollection<Product> Products { get; set; }
+            = new List<Product>();
     }
 }
